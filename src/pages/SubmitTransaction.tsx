@@ -56,7 +56,7 @@ const SubmitTransaction: React.FC = () => {
       });
 
       const transaction = {
-        to: contract.address,
+        to: contract.address as `0x${string}`,
         data: tx.data as `0x${string}`,
         value: BigInt(parseInt(value)),
         chain: MULTI_SIG_CONTRACT.chain,
