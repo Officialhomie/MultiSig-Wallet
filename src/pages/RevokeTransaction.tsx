@@ -101,7 +101,7 @@ const RevokeTransaction: React.FC = () => {
     <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
       <div className='flex items-center justify-between gap-[200px]'>
         <i onClick={navigateToConfirm} className="bi bi-arrow-left-circle arrows"></i>
-        <h1 className='text-4xl font-bold'>Revoke A Transaction</h1>
+        <h1 className='text-4xl font-bold'>Revoke A Confirmation</h1>
         <i onClick={navigateToRevoke} className="bi bi-arrow-right-circle arrows"></i>
       </div>
 
@@ -118,7 +118,7 @@ const RevokeTransaction: React.FC = () => {
           className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500"
           disabled={isLoading}
         >
-          {isLoading ? 'Executing...' : 'Execute Transaction'}
+          {isLoading ? 'Revoking...' : 'Revoke Transaction'}
         </button>
       </div>
       {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}

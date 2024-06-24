@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
             <h1 className='font-bold text-[12px] lg:text-[16px]'>{leftText}</h1>
           </div>
 
-          <div className="grid grid-cols-2 lg:flex lg:flex-col items-center gap-[15px] lg:gap-[30px] my-[0px] w-[90%]">
+          <div className="grid grid-cols-2 sm:flex sm:flex-col lg:flex lg:flex-col items-center gap-[15px] lg:gap-[30px] my-[0px] w-[90%] mx-auto">
               <button onClick={handleButtonClick1} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Submit Transaction</button>
               <button onClick={handleButtonClick2} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Confirm Transaction</button>
               <button onClick={handleButtonClick3} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Execute Transaction</button>

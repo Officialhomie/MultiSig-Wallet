@@ -104,7 +104,7 @@ const ConfirmTransaction: React.FC = () => {
             onClick={navigateToRevoke}
             className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500"
           >
-            Revoke Transaction
+            Revoke Confirmation
           </button>
         </div>
         

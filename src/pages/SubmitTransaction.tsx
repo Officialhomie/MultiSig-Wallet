@@ -178,10 +178,17 @@ const SubmitTransaction: React.FC = () => {
 
   const handleSubmitTransaction = async () => {
     try {
+      const formattedData = `0x${data}`;
+      
+      // Validate that the data starts with '0x'
+      if (!formattedData.startsWith('0x')) {
+        throw new Error('Data must be a hex string starting with 0x');
+      }
+
       const tx = await prepareContractCall({
         contract,
         method: 'submitTransaction',
-        params: [to, BigInt(parseInt(value)), `0x${data}`],
+        params: [to, BigInt(parseInt(value)), formattedData as `0x${string}`],
       });
 
       const transaction = {
@@ -254,3 +261,4 @@ const SubmitTransaction: React.FC = () => {
 };
 
 export default SubmitTransaction;
+
