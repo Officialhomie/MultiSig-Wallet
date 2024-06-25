@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
 
   const Getext1 = () => {
     return (
-        <h1>Any owner can submit a transaction. Ensure there is a sufficient ETH in this contract. If not, <button className='deposit'>Deposit</button> <br /> Must include a recipient address & an amount. Data is optional</h1>
+        <h1 className=''>Any owner can submit a transaction. Ensure there is a sufficient ETH in this contract. If not, <button className='deposit'>Deposit</button> <br /> Must include a recipient address & an amount. Data is optional</h1>
     )
   }
   const Getext2 = () => {
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
         
         <div className="flex flex-col md:flex-row lg:flex-row w-[90%] items-center justify-between gap-[20px] lg:gap-[130px] my-[40px] px-[0px] lg:px-[50px]">
 
-          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
+          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[95%]">
             <h1 className='font-bold text-[14px] lg:text-[16px]'>{leftText}</h1>
           </div>
 
@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
               <button onClick={handleButtonClick4} className="px-[10px] md:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px] md:text-lg">Revoke Confirmation</button>
           </div>
 
-          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
+          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[95%]">
               <h1 className='font-bold text-[14px] lg:text-md'>{rightText}</h1>
           </div>
         </div>

@@ -76,14 +76,14 @@ const ConfirmTransaction: React.FC = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <div className='flex items-center justify-between gap-[200px]'>
+    <div className="w-[90%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
+      <div className='flex items-center justify-between gap-[20px] md:gap-[200px]'>
         <i onClick={navigateToConfirm} className="bi bi-arrow-left-circle arrows"></i>
-        <h1 className='text-4xl font-bold'>Confirm A Transaction</h1>
+        <h1 className='text-[18px] sm:text-4xl font-bold'>Confirm A Transaction</h1>
         <i onClick={navigateToExecute} className="bi bi-arrow-right-circle arrows"></i>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-[20px] my-[40px] px-[50px] h-[260px] w-[95%] rounded-lg border">
+      <div className="flex flex-col items-center justify-center gap-[20px] my-[40px] px-[15px] md:px-[50px] py-[15px] h-[260px] w-[95%] rounded-lg border">
         <input
           type="number"
           placeholder="Transaction Index"
@@ -91,7 +91,7 @@ const ConfirmTransaction: React.FC = () => {
           onChange={(e) => setTxIndex(e.target.value)}
           className="px-[10px] py-[5px] border rounded-lg w-full"
         />
-        <div className='flex items-center justify-between gap-[300px]'>
+        <div className='flex flex-col sm:flex-row items-center justify-between gap-[30px] md:gap-[200px] lg:gap-[300px]'>
           <button
             onClick={handleConfirmTransaction}
             className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500"
@@ -102,7 +102,7 @@ const ConfirmTransaction: React.FC = () => {
 
           <button
             onClick={navigateToRevoke}
-            className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500"
+            className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-red-500"
           >
             Revoke Confirmation
           </button>

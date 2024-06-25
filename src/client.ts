@@ -13,7 +13,7 @@ export const client = createThirdwebClient({
 export const chain = defineChain(11155111);
 
 // get the contract address 
-const contractAddress = "0xDf9736f21a3D0CAadC9D3d3B7C8b03027744E3F3";
+const contractAddress = "0xbCFc86F23f1899364EF84b20e5cFfFcdf142BFa3";
 
 // get the contract Abi as a constant
 const contractABI = [
@@ -154,10 +154,48 @@ const contractABI = [
         "name": "data",
         "indexed": false,
         "internalType": "bytes"
+      },
+      {
+        "type": "string",
+        "name": "description",
+        "indexed": false,
+        "internalType": "string"
       }
     ],
     "outputs": [],
     "anonymous": false
+  },
+  {
+    "type": "function",
+    "name": "addOwner",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "newOwner",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "canExecuteTransaction",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_txIndex",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -184,6 +222,19 @@ const contractABI = [
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getBalance",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -233,6 +284,11 @@ const contractABI = [
         "type": "uint256",
         "name": "numConfirmations",
         "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "description",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -327,6 +383,19 @@ const contractABI = [
   },
   {
     "type": "function",
+    "name": "removeOwner",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "owner",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "revokeConfirmation",
     "inputs": [
       {
@@ -337,6 +406,19 @@ const contractABI = [
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "stopped",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -356,8 +438,20 @@ const contractABI = [
         "type": "bytes",
         "name": "_data",
         "internalType": "bytes"
+      },
+      {
+        "type": "string",
+        "name": "_description",
+        "internalType": "string"
       }
     ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "toggleContractActive",
+    "inputs": [],
     "outputs": [],
     "stateMutability": "nonpayable"
   },
@@ -396,6 +490,11 @@ const contractABI = [
         "type": "uint256",
         "name": "numConfirmations",
         "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "description",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"

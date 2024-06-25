@@ -100,14 +100,14 @@ const ExecuteTransaction: React.FC = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <div className='flex items-center justify-between gap-[200px]'>
+    <div className="w-[90%] mx-auto border border-b-red my-[30px] h-[300px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
+      <div className='flex items-center justify-between gap-[20px] md:gap-[200px]'>
         <i onClick={navigateToConfirm} className="bi bi-arrow-left-circle arrows"></i>
-        <h1 className='text-4xl font-bold'>Execute A Transaction</h1>
+        <h1 className='text-[18px] sm:text-4xl font-bold'>Execute A Transaction</h1>
         <i onClick={navigateToRevoke} className="bi bi-arrow-right-circle arrows invisible"></i>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-[20px] my-[40px] px-[50px] h-[260px] w-[95%] rounded-lg border">
+      <div className="flex flex-col items-center justify-center gap-[20px] my-[30px] px-[15px] md:px-[50px] py-[15px] h-[200px] w-[95%] rounded-lg border">
         <input
           type="number"
           placeholder="Transaction Index"

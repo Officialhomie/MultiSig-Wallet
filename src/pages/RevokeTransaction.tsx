@@ -1,32 +1,3 @@
-// import React from 'react'
-// import { useNavigate } from 'react-router-dom';
-
-// const RevokeTransaction: React.FC = () => {
-//   const navigate = useNavigate();
-
-//   const navigateToHome = () => {
-//     navigate('/');
-//   };
-//   return (
-//       <>
-//         <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-//             <div className='flex items-center justify-between gap-[200px]'>
-//               <i onClick={navigateToHome} className="bi bi-arrow-left-circle arrows"></i>
-//               <h1 className='text-4xl font-bold'>Revoke A Transaction</h1>
-//               <i className="bi bi-arrow-right-circle arrows invisible"></i>
-//             </div>
-
-//             <div className="flex items-center justify-between gap-[130px] my-[40px] px-[50px] h-[260px] w-[95%] rounded-lg border">
-            
-//             </div>
-//         </div>
-//       </>
-//   )
-// }
-
-// export default RevokeTransaction
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { prepareContractCall } from 'thirdweb';
@@ -40,6 +11,7 @@ const RevokeTransaction: React.FC = () => {
   const [txIndex, setTxIndex] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
+  const [msg, setMsg] = useState<string | null>(null);
 
   // Navigation functions
   const navigateToHome = () => {
@@ -61,8 +33,14 @@ const RevokeTransaction: React.FC = () => {
   const { mutate: sendTransaction } = useSendTransaction();
 
   const handleExecuteTransaction = async () => {
+    if (!txIndex) {
+      setError(new Error('Transaction index is required.'));
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
+    setMsg(null);
 
     try {
       const tx = await prepareContractCall({
@@ -81,7 +59,7 @@ const RevokeTransaction: React.FC = () => {
 
       sendTransaction(transaction, {
         onSuccess: () => {
-          console.log('Transaction executed successfully');
+          setMsg('Transaction executed successfully');
           navigateToConfirm(); // or any other desired navigation
         },
         onError: (error) => {
@@ -98,14 +76,14 @@ const RevokeTransaction: React.FC = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <div className='flex items-center justify-between gap-[200px]'>
+    <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
+      <div className='flex items-center justify-between gap-[20px] md:gap-[200px]'>
         <i onClick={navigateToConfirm} className="bi bi-arrow-left-circle arrows"></i>
-        <h1 className='text-4xl font-bold'>Revoke A Confirmation</h1>
+        <h1 className='text-[18px] sm:text-4xl font-bold'>Revoke A Confirmation</h1>
         <i onClick={navigateToRevoke} className="bi bi-arrow-right-circle arrows"></i>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-[20px] my-[40px] px-[50px] h-[260px] w-[95%] rounded-lg border">
+      <div className="flex flex-col items-center justify-center gap-[20px] my-[30px] px-[15px] md:px-[50px] py-[15px] h-[200px] w-[95%] rounded-lg border">
         <input
           type="number"
           placeholder="Transaction Index"
@@ -121,7 +99,10 @@ const RevokeTransaction: React.FC = () => {
           {isLoading ? 'Revoking...' : 'Revoke Transaction'}
         </button>
       </div>
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+      <div className='border mb-[30px] bg-white rounded-lg px-[10px] py-[10px] w-[95%]'>
+        {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+        {msg && <p style={{ color: 'green' }}>{msg}</p>}
+      </div>
     </div>
   );
 };
