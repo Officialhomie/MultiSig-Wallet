@@ -43,13 +43,6 @@ const ConfirmTransaction: React.FC = () => {
         params: [BigInt(parseInt(txIndex))],
       });
 
-      // const transaction = {
-      //   to: contract.address,
-      //   data: tx.data as `0x${string}`,
-      //   value: 0n,
-      //   chain: MULTI_SIG_CONTRACT.chain,
-      //   client,
-      // };
       const transaction = {
         to: contract.address as `0x${string}`,
         data: tx.data as `0x${string}`,

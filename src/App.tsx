@@ -18,7 +18,7 @@ export function App() {
 	return (
 		<>
 		    <Router>
-				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500">
+				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500 rounded-bl-lg rounded-br-lg">
 					<h1 className="sm:text-xl md:text-xl lg:text-3xl font-bold">Your Multi-Signature Wallet</h1>
 					<Login />
 				</nav>

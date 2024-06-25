@@ -44,7 +44,7 @@ const SubmitTransaction: React.FC = () => {
     };
 
     connectWallet();
-  }, []);
+  }, [isConnecting]);
 
   const { mutate: sendTransaction } = useSendTransaction();
 
