@@ -6,6 +6,11 @@ import SubmitTransaction from "./pages/SubmitTransaction";
 import ExecuteTransaction from './pages/ExecuteTransaction';
 import ConfirmTransaction from './pages/ConfirmTransaction';
 import RevokeTransaction from './pages/RevokeTransaction';
+import GetOwners from './components/Owners';
+import GetTransaction from './components/GetTransaction';
+import GetTransactionCount from './components/GetTransactionCount';
+import IsTransactionConfirmed from './components/IsConfirmed';
+import GetTransactionDetails from './components/Transactions';
 
 export function App() {
 	return (
@@ -23,6 +28,12 @@ export function App() {
 					<Route path="/ExecuteTransaction" element={<ExecuteTransaction />} />
 					<Route path="/RevokeTransaction" element={<RevokeTransaction />} />
                 </Routes>
+
+				<GetOwners/>
+				<GetTransaction/>
+				<GetTransactionCount/>
+				<IsTransactionConfirmed/>
+				<GetTransactionDetails/>
 
 
 				<footer className="p-4 bg-blue-500 text-white">

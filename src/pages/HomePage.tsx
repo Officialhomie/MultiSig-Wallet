@@ -55,25 +55,25 @@ const HomePage: React.FC = () => {
         <h1 className="text-center text-2xl lg:text-4xl font-bold">Here's a WorkFlow</h1> 
 
         
-        <div className="flex flex-col md:flex-row lg:flex-row items-center justify-between gap-[20px] lg:gap-[130px] my-[40px] px-[0px] lg:px-[50px]">
+        <div className="flex flex-col md:flex-row lg:flex-row w-[90%] items-center justify-between gap-[20px] lg:gap-[130px] my-[40px] px-[0px] lg:px-[50px]">
 
-          <div className=" lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
-            <h1 className='font-bold text-[12px] lg:text-[16px]'>{leftText}</h1>
+          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
+            <h1 className='font-bold text-[14px] lg:text-[16px]'>{leftText}</h1>
           </div>
 
-          <div className="grid grid-cols-2 sm:flex sm:flex-col lg:flex lg:flex-col items-center gap-[15px] lg:gap-[30px] my-[0px] w-[90%] mx-auto">
-              <button onClick={handleButtonClick1} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Submit Transaction</button>
-              <button onClick={handleButtonClick2} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Confirm Transaction</button>
-              <button onClick={handleButtonClick3} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Execute Transaction</button>
-              <button onClick={handleButtonClick4} className="px-[10px] lg:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px]">Revoke Confirmation</button>
+          <div className="grid grid-cols-2 sm:flex sm:flex-col lg:flex lg:flex-col items-center gap-[15px] lg:gap-[30px] my-[0px] w-[80%] mx-auto">
+              <button onClick={handleButtonClick1} className="px-[10px] md:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px] md:text-lg">Submit Transaction</button>
+              <button onClick={handleButtonClick2} className="px-[10px] md:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px] md:text-lg">Confirm Transaction</button>
+              <button onClick={handleButtonClick3} className="px-[10px] md:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px] md:text-lg">Execute Transaction</button>
+              <button onClick={handleButtonClick4} className="px-[10px] md:px-[20px] py-[10px] border border-white cursor-pointer rounded-lg text-[10px] md:text-lg">Revoke Confirmation</button>
           </div>
 
-          <div className="w-[] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
-              <h1 className='font-bold text-[12px] lg:text-md'>{rightText}</h1>
+          <div className="w-[100%] lg:w-[95%] h-[170px] border rounded-lg p-[15px] lg:p-[10px] w-[80%]">
+              <h1 className='font-bold text-[14px] lg:text-md'>{rightText}</h1>
           </div>
         </div>
 
-        <button onClick={navigateToSubmit} className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500 ">Get Started</button>
+        <button onClick={navigateToSubmit} className="w-[90%] px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500 ">Get Started</button>
 		</div>
     </>
   );

@@ -185,6 +185,10 @@ const SubmitTransaction: React.FC = () => {
         throw new Error('Data must be a hex string starting with 0x');
       }
 
+      if (!to || !value) {
+        throw new Error('Recipint Address and Value are required');
+      }
+
       const tx = await prepareContractCall({
         contract,
         method: 'submitTransaction',
@@ -217,6 +221,7 @@ const SubmitTransaction: React.FC = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
+
 
   return (
     <div className="w-[80%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
