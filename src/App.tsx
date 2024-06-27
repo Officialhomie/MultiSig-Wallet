@@ -13,13 +13,17 @@ import GetTransaction from './components/GetTransaction';
 import GetTransactionCount from './components/GetTransactionCount';
 import IsTransactionConfirmed from './components/IsConfirmed';
 import GetTransactionDetails from './components/Transactions';
+import myLogo from "./images/WhatsApp Image 2024-06-27 at 03.32.24_a38343ae.jpg"
 
 export function App() {
 	return (
 		<>
 		    <Router>
 				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500 rounded-bl-2xl rounded-br-2xl glass-navbar">
-					<h1 className="sm:text-xl md:text-xl lg:text-3xl font-bold">Your Multi-Signature Wallet</h1>
+					<div className='flex items-center gap-[10px]'>
+						<img className='w-[40%] md:w-[8%] rounded-[50%]' src={myLogo} alt="" />
+						<h1 className="hidden sm:block sm:text-xl md:text-xl lg:text-4xl font-bold">DeFi Insights Multi-Sig</h1>
+					</div>
 					<Login />
 				</nav>
 
@@ -66,6 +70,3 @@ export function App() {
 
 
 
-{/* <main className="p-4 pb-10 min-h-[100vh] flex items-center justify-center container max-w-screen-lg mx-auto">
-
-</main> */}
