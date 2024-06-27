@@ -58,3 +58,14 @@ body {
     font-size: 24px;
   }
 }
+
+.glass-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top */
+  /* background: transparent; Light blue with transparency */
+  background: rgb(59, 130, 246); 
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support for glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18); /* Light border for definition */
+}
