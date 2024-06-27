@@ -9,14 +9,14 @@ const SubmitTransaction: React.FC = () => {
   const contract = MULTI_SIG_CONTRACT;
   const navigate = useNavigate();
 
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+  // const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
   const [to, setTo] = useState<`0x${string}` | ''>('');
   const [value, setValue] = useState<string>('');
   const [data, setData] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [isConnecting, setIsConnecting] = useState<boolean>(false);
+  // const [isConnecting, setIsConnecting] = useState<boolean>(false);
 
   const navigateToHome = () => {
     navigate('/');
@@ -26,25 +26,25 @@ const SubmitTransaction: React.FC = () => {
     navigate('/ConfirmTransaction');
   };
   
-  useEffect(() => {
-    const connectWallet = async () => {
-      if (isConnecting) return;
-      setIsConnecting(true);
+  // useEffect(() => {
+  //   const connectWallet = async () => {
+  //     if (isConnecting) return;
+  //     setIsConnecting(true);
 
-      try {
-        const wallet = createWallet('io.metamask');
-        const account = await wallet.connect({ client });
-        setWalletAddress(account.address);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setIsLoading(false);
-        setIsConnecting(false);
-      }
-    };
+  //     try {
+  //       const wallet = createWallet('io.metamask');
+  //       const account = await wallet.connect({ client });
+  //       setWalletAddress(account.address);
+  //     } catch (err) {
+  //       setError(err as Error);
+  //     } finally {
+  //       setIsLoading(false);
+  //       setIsConnecting(false);
+  //     }
+  //   };
 
-    connectWallet();
-  }, [isConnecting]);
+  //   connectWallet();
+  // }, [isConnecting]);
 
   const { mutate: sendTransaction } = useSendTransaction();
 
