@@ -18,7 +18,7 @@ export function App() {
 	return (
 		<>
 		    <Router>
-				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500 rounded-bl-lg rounded-br-lg">
+				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500 rounded-bl-2xl rounded-br-2xl">
 					<h1 className="sm:text-xl md:text-xl lg:text-3xl font-bold">Your Multi-Signature Wallet</h1>
 					<Login />
 				</nav>
@@ -38,7 +38,7 @@ export function App() {
 				<GetTransactionDetails/>
 
 
-				<footer className="p-4 bg-blue-500 text-white">
+				<footer className="p-4 bg-blue-500 text-white  rounded-tr-2xl rounded-tl-2xl">
 					Thank You.
 				</footer>
 			</Router>

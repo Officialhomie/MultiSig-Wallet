@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { prepareContractCall } from 'thirdweb';
 import { client, MULTI_SIG_CONTRACT } from '../client';
@@ -75,6 +75,16 @@ const RevokeTransaction: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError(null);
+      }, 5000); // 10 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
       <div className='flex items-center justify-between gap-[20px] md:gap-[200px]'>
@@ -100,11 +110,23 @@ const RevokeTransaction: React.FC = () => {
         </button>
       </div>
       <div className='border mb-[30px] bg-white rounded-lg px-[10px] py-[10px] w-[95%]'>
-        {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
-        {msg && <p style={{ color: 'green' }}>{msg}</p>}
+        {error && 
+          <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-red text-black border rounded-xl'>
+            Error: {error.message}
+          </div>
+        }
+        
+        {msg && 
+          <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-red text-black border rounded-xl'>
+            {msg}
+          </div>
+        }
       </div>
     </div>
   );
 };
 
 export default RevokeTransaction;
+
+
+{/* <p style={{ color: 'red' }}>Error: {error.message}</p> */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { prepareContractCall } from 'thirdweb';
 import { client, MULTI_SIG_CONTRACT } from '../client';
@@ -68,6 +68,16 @@ const ConfirmTransaction: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError(null);
+      }, 5000); // 10 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-[402px] rounded-[10px] p-[15px] flex flex-col items-center justify-center">
       <div className='flex items-center justify-between gap-[20px] md:gap-[200px]'>
@@ -102,7 +112,12 @@ const ConfirmTransaction: React.FC = () => {
         </div>
         
       </div>
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+      {error &&     
+        <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-black border rounded-xl'>
+          Error: {error.message}
+        </div>}
+      
+      
     </div>
   );
 };
