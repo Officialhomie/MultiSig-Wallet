@@ -82,7 +82,7 @@ const SubmitTransaction: React.FC = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return (
-    <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-blue text-black border rounded-xl'>
+    <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-red-500 text-black border rounded-xl'>
       Error: {error.message}
     </div>
   );
@@ -108,28 +108,28 @@ const SubmitTransaction: React.FC = () => {
               setTo(''); 
             }
           }}
-          className="px-[10px] py-[5px] border rounded-lg w-full"
+          className="px-[10px] py-[5px] text-green-500 border rounded-lg w-full"
         />
         <input
           type="number"
           placeholder="Value"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="px-[10px] py-[5px] border rounded-lg w-full"
+          className="px-[10px] py-[5px] text-green-500 border rounded-lg w-full"
         />
         <input
           type="text"
           placeholder="Data"
           value={data}
           onChange={(e) => setData(e.target.value)}
-          className="px-[10px] py-[5px] border rounded-lg w-full"
+          className="px-[10px] py-[5px] text-green-500 border rounded-lg w-full"
         />
         <input
           type="text"
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="px-[10px] py-[5px] border rounded-lg w-full"
+          className="px-[10px] py-[5px] text-green-500 border rounded-lg w-full"
         />
         <button
           onClick={handleSubmitTransaction}
@@ -139,7 +139,7 @@ const SubmitTransaction: React.FC = () => {
         </button>
       </div>
       {msg && 
-          <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-green text-black border rounded-xl'>
+          <div className='w-[80%] mx-auto my-[30px] py-[15px] text-center bg-white text-green-500 text-black border rounded-xl'>
             <h1 className='text-green'>{msg}</h1>
           </div>
       }
