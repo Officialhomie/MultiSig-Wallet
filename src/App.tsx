@@ -21,7 +21,7 @@ export function App() {
 		    <Router>
 				<nav className="flex items-center justify-between px-[10px] lg:w-[100%] lg:px-[30px] py-[20px] bg-blue-500 rounded-bl-2xl rounded-br-2xl glass-navbar">
 					<div className='flex items-center gap-[10px]'>
-						<img className='w-[35%] sm:w-[20%] md:w-[8%] rounded-[50%]' src={myLogo} alt="" />
+						<img className='w-[30%] sm:w-[20%] md:w-[8%] rounded-[50%]' src={myLogo} alt="" />
 						<h1 className="hidden sm:block sm:text-xl md:text-xl lg:text-4xl font-bold">DeFi Insights Multi-Sig</h1>
 					</div>
 					<Login />
