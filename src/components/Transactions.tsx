@@ -149,7 +149,7 @@ const GetTransactionDetails: React.FC = () => {
 
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <h1 className="text-2xl lg:text-4xl font-bold mb-[20px] ">Get Transaction Details</h1>
+      <h1 className="text-xl text-center lg:text-4xl font-bold mb-[20px] ">Get Transaction Details</h1>
       <input
         type="number"
         placeholder="Transaction Index"
@@ -158,7 +158,7 @@ const GetTransactionDetails: React.FC = () => {
       />
       <button
         onClick={fetchTransactionDetails}
-        className="px-[20px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500"
+        className="px-[10px] py-[10px] border border-white cursor-pointer rounded-lg bg-blue-500 w-[80%]"
         disabled={isLoading}
       >
         Fetch Transaction Details

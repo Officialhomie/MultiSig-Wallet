@@ -30,7 +30,7 @@ const IsTransactionConfirmed: React.FC = () => {
 
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <h1 className="text-2xl lg:text-4xl font-bold mb-[20px] ">Check Transaction Confirmation</h1>
+      <h1 className="text-2xl text-center lg:text-4xl font-bold mb-[20px] ">Check Transaction Confirmation</h1>
       <input
         type="number"
         placeholder="Transaction Index"

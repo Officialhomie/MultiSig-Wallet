@@ -23,7 +23,7 @@ const GetTransaction: React.FC = () => {
 
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <h1 className="text-3xl lg:text-4xl font-bold mb-[20px]">Get Transaction</h1>
+      <h1 className="text-2xl text-center md:text-4xl font-bold mb-[20px]">Get Transaction</h1>
       <input
         type="number"
         placeholder="Transaction Index"

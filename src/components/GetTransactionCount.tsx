@@ -13,7 +13,7 @@ const GetTransactionCount: React.FC = () => {
 
   return (
     <div className="w-[90%] mx-auto border border-b-red my-[30px] h-auto rounded-[10px] p-[15px] flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-[20px]">Transaction Count</h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-[20px]">Transaction Count</h1>
       <div className="flex flex-col items-center justify-center gap-[20px] px-[15px] md:px-[50px] py-[15px] h-auto w-[95%] rounded-lg border">
         {isLoading ? (
           <p>Loading...</p>
