@@ -10,7 +10,7 @@ const SubmitTransaction: React.FC = () => {
   const navigate = useNavigate();
 
   // const [walletAddress, setWalletAddress] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
   const [to, setTo] = useState<`0x${string}` | ''>('');
   const [value, setValue] = useState<string>('');
